@@ -5,44 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     * {
+        /* Dokunma vurgularını temizle ama efektleri bozma */
         -webkit-tap-highlight-color: transparent;
-        outline: none;
-        box-sizing: border-box; /* Tüm kutuları hizalamak için önemli */
+        box-sizing: border-box;
     }
+
     body { 
         font-family: 'Inter', sans-serif; 
         background: radial-gradient(circle at 50% 50%, #1e152a 0%, #0a0a0e 100%);
         color: #ffffff; margin: 0; padding: 60px 20px; 
         display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+        overflow-x: hidden; /* Taşmayı engeller */
     }
- 
-     h1 { 
+
+    h1 { 
         margin-bottom: 50px; 
         font-weight: 300; 
-        /* clamp komutu: Minimum 1.8rem, ideal 6vw, maksimum 2.5rem olsun demek */
-        font-size: clamp(1.8rem, 6vw, 2.5rem); 
-        letter-spacing: 1px; 
+        /* Yazının tek satırda kalmasını garanti eder */
+        white-space: nowrap; 
+        font-size: clamp(1.2rem, 6vw, 2.5rem); 
+        letter-spacing: 2px; 
         text-align: center;
         width: 100%;
-        padding: 0 10px;
     }
- 
+
     .container { 
-    width: 90%; 
-    max-width: 450px; 
-    margin: 0 auto; 
-}
-  
- 
+        width: 100%; 
+        max-width: 450px; 
+        margin: 0 auto; 
+    }
+
     .card { 
         background: rgba(255, 255, 255, 0.02); 
         border: 3px solid rgba(236, 72, 153, 0.2); 
         border-radius: 30px; padding: 40px; margin-bottom: 30px; 
         text-align: center; backdrop-filter: blur(20px);
         position: relative; 
-        transition: 0.5s;
+        transition: 0.4s ease; /* Daha akıcı geçiş */
     }
- 
+
     .flower-icon::before {
         content: "🌸";
         position: absolute;
@@ -50,13 +51,17 @@
         left: 20px;
         font-size: 1.4rem;
     }
- 
-   .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(236, 72, 153, 0.2);  
-            box-shadow: 0 0 60px rgba(236, 72, 153, 0.3);
-        }
+
+    /* KARTIN PARLAMA EFEKTİ */
+    /* Hem fareyle (hover) hem de parmakla dokununca (active) parlasın */
+    .card:hover, .card:active {
+        transform: translateY(-5px);
+        border-color: rgba(236, 72, 153, 0.2);  
+        box-shadow: 0 0 40px rgba(236, 72, 153, 0.5); /* Parlamayı biraz belirginleştirdik */
+    }
+
     .btn-group { display: flex; gap: 15px; justify-content: center; }
+    
     .btn { 
         flex: 1; padding: 12px 0; border-radius: 50px; 
         text-decoration: none; font-weight: 500; font-size: 0.85em; 
@@ -65,43 +70,47 @@
         border: 1px solid rgba(255, 255, 255, 0.08);
         color: rgba(255,255,255,0.7);
     }
-     /* GitHub Hover: Yeşil */
-        .btn-gh:hover { 
-            background: #2ea043; 
-            color: white;
-            box-shadow: 0 0 20px #2ea043; 
-            border-color: #2ea043;
-            transform: scale(1.05);
-        }
-   /* LinkedIn Hover: Mavi */
-        .btn-li:hover { 
-            background: #0077b5; 
-            color: white;
-            box-shadow: 0 0 20px #0077b5; 
-            border-color: #0077b5;
-            transform: scale(1.05);
-        }</style>
+    
+    /* Butonlardaki o "kaba" focus çerçevesini kaldırdık */
+    .btn:focus { outline: none; }
+
+    /* GitHub Hover: Yeşil */
+    .btn-gh:hover { 
+        background: #2ea043; color: white;
+        box-shadow: 0 0 20px #2ea043; 
+        border-color: #2ea043;
+        transform: scale(1.05);
+    }
+    /* LinkedIn Hover: Mavi */
+    .btn-li:hover { 
+        background: #0077b5; color: white;
+        box-shadow: 0 0 20px #0077b5; 
+        border-color: #0077b5;
+        transform: scale(1.05);
+    }
+</style>
 </head>
 <body>
-<h1>Connect & Explore</h1>
+    <h1>Connect & Explore</h1>
  
     <div class="container">
-<div class="card flower-icon">
-<h2>Ecem Doğan</h2>
-<p>MIS Student | Full Stack Developer</p>
-<div class="btn-group">
-<a href="https://github.com/ecemdogannn" target="_blank" class="btn btn-gh">GitHub</a>
-<a href="https://www.linkedin.com/in/ecem-doğan123" target="_blank" class="btn btn-li">LinkedIn</a>
-</div>
-</div>
+        <div class="card flower-icon">
+            <h2>Ecem Doğan</h2>
+            <p>MIS Student | Full Stack Developer</p>
+            <div class="btn-group">
+                <a href="https://github.com/ecemdogannn" target="_blank" class="btn btn-gh">GitHub</a>
+                <a href="https://www.linkedin.com/in/ecem-doğan123" target="_blank" class="btn btn-li">LinkedIn</a>
+            </div>
+        </div>
  
         <div class="card flower-icon">
-<h2>Rabia Nur Yıldız</h2>
-<p>MIS Student | Full Stack Developer</p>
-<div class="btn-group">
-<a href="https://github.com/rnyldzz" target="_blank" class="btn btn-gh">GitHub</a> <a href="https://www.linkedin.com/in/rabia-nur-yildiz-23a5172a2/" target="_blank" class="btn btn-li">LinkedIn</a>
-</div>
-</div>
-</div>
+            <h2>Rabia Nur Yıldız</h2>
+            <p>MIS Student | Full Stack Developer</p>
+            <div class="btn-group">
+                <a href="https://github.com/rnyldzz" target="_blank" class="btn btn-gh">GitHub</a> 
+                <a href="https://www.linkedin.com/in/rabia-nur-yildiz-23a5172a2/" target="_blank" class="btn btn-li">LinkedIn</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
