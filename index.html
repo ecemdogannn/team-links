@@ -1,134 +1,183 @@
 <!DOCTYPE html>
+
 <html lang="tr">
+
 <head>
+
 <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
- 
-    body {
- 
-        font-family: 'Inter', sans-serif;
- 
+
+    body { 
+
+        font-family: 'Inter', sans-serif; 
+
         background: radial-gradient(circle at 50% 50%, #1e152a 0%, #0a0a0e 100%);
- 
-        color: #ffffff; margin: 0; padding: 60px 20px;
- 
+
+        color: #ffffff; margin: 0; padding: 60px 20px; 
+
         display: flex; flex-direction: column; align-items: center; min-height: 100vh;
- 
+
     }
+
  
+
     h1 { margin-bottom: 50px; font-weight: 300; font-size: 2.5em; letter-spacing: 2px; }
+
  
-    .container { width: 100%; max-width: 450px; }
+
+    .container { 
+
+    width: 90%; 
+
+    max-width: 450px; 
+
+    margin: 0 auto; 
+
+}
+
  
-    .card {
- 
-        background: rgba(255, 255, 255, 0.02);
- 
-        border: 3px solid rgba(236, 72, 153, 0.2);
- 
-        border-radius: 30px; padding: 40px; margin-bottom: 30px;
- 
+
+    .card { 
+
+        background: rgba(255, 255, 255, 0.02); 
+
+        border: 3px solid rgba(236, 72, 153, 0.2); 
+
+        border-radius: 30px; padding: 40px; margin-bottom: 30px; 
+
         text-align: center; backdrop-filter: blur(20px);
- 
-        position: relative;
- 
+
+        position: relative; 
+
         transition: 0.5s;
- 
+
     }
+
  
+
     .flower-icon::before {
- 
+
         content: "🌸";
- 
+
         position: absolute;
- 
+
         top: 20px;
- 
+
         left: 20px;
- 
+
         font-size: 1.4rem;
- 
+
     }
+
  
+
    .card:hover {
- 
+
             transform: translateY(-5px);
- 
+
             border-color: rgba(236, 72, 153, 0.2);  
- 
+
             box-shadow: 0 0 60px rgba(236, 72, 153, 0.3);
- 
+
         }
- 
+
     .btn-group { display: flex; gap: 15px; justify-content: center; }
- 
-    .btn {
- 
-        flex: 1; padding: 12px 0; border-radius: 50px;
- 
-        text-decoration: none; font-weight: 500; font-size: 0.85em;
- 
+
+    .btn { 
+
+        flex: 1; padding: 12px 0; border-radius: 50px; 
+
+        text-decoration: none; font-weight: 500; font-size: 0.85em; 
+
         transition: 0.4s; text-align: center;
- 
+
         background: rgba(255, 255, 255, 0.04);
- 
+
         border: 1px solid rgba(255, 255, 255, 0.08);
- 
+
         color: rgba(255,255,255,0.7);
- 
+
     }
- 
+
      /* GitHub Hover: Yeşil */
- 
-        .btn-gh:hover {
- 
-            background: #2ea043;
- 
+
+        .btn-gh:hover { 
+
+            background: #2ea043; 
+
             color: white;
- 
-            box-shadow: 0 0 20px #2ea043;
- 
+
+            box-shadow: 0 0 20px #2ea043; 
+
             border-color: #2ea043;
- 
+
             transform: scale(1.05);
- 
+
         }
- 
+
    /* LinkedIn Hover: Mavi */
- 
-        .btn-li:hover {
- 
-            background: #0077b5;
- 
+
+        .btn-li:hover { 
+
+            background: #0077b5; 
+
             color: white;
- 
-            box-shadow: 0 0 20px #0077b5;
- 
+
+            box-shadow: 0 0 20px #0077b5; 
+
             border-color: #0077b5;
- 
+
             transform: scale(1.05);
- 
+
         }</style>
+
 </head>
+
 <body>
+
 <h1>Connect & Explore</h1>
-<div class="container">
+
+ 
+
+    <div class="container">
+
 <div class="card flower-icon">
+
 <h2>Ecem Doğan</h2>
+
 <p>MIS Student | Full Stack Developer</p>
+
 <div class="btn-group">
+
 <a href="https://github.com/ecemdogannn" target="_blank" class="btn btn-gh">GitHub</a>
+
 <a href="https://www.linkedin.com/in/ecem-doğan123" target="_blank" class="btn btn-li">LinkedIn</a>
+
 </div>
+
 </div>
-<div class="card flower-icon">
+
+ 
+
+        <div class="card flower-icon">
+
 <h2>Rabia Nur Yıldız</h2>
+
 <p>MIS Student | Full Stack Developer</p>
+
 <div class="btn-group">
+
 <a href="https://github.com/rnyldzz" target="_blank" class="btn btn-gh">GitHub</a> <a href="https://www.linkedin.com/in/rabia-nur-yildiz-23a5172a2/" target="_blank" class="btn btn-li">LinkedIn</a>
+
 </div>
+
 </div>
+
 </div>
+
 </body>
+
 </html>
